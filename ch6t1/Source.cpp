@@ -114,7 +114,10 @@ double prim(bool get)
 Token_value get_token()
 {
 	char ch = 0;
-	cin >> ch;
+	do 
+	{
+		if (!cin.get(ch)) return curr_tok = END;
+	} while (ch != '\n'&& isspace(ch));
 
 	switch (ch)
 	{
